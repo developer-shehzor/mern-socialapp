@@ -9,14 +9,15 @@ import {
   persistStore,
   persistReducer,
   FLUSH,
-  REHYDRA,
+  REHYDRATE,
   PAUSE,
+  PERSIST,
   PURGE,
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { PersistGate } from 'redux-persist/integration/react';
-import persistReducer from 'redux-persist/es/persistReducer';
+// import persistReducer from 'redux-persist/es/persistReducer';
 
 const persistConfig = { key: "root", storage, version: 1 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
