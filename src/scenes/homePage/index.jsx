@@ -1,9 +1,11 @@
-import React from 'react'
+import { Box } from '@mui/material'
+import Navbar from 'scenes/navbar'
+
 
 export default function HomePage() {
   return (
-    <div>
-      homepage
-    </div>
+    <Box>
+      <Navbar />
+    </Box>
   )
 }
