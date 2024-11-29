@@ -1,7 +1,7 @@
 import {
-    ManageAccountOutlined,
     EditOutlined,
     LocationOnOutlined,
+    ManageAccountsOutlined,
     WorkOutlineOutlined,
 } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
@@ -75,11 +75,12 @@ const UserWidget = ({ userId, picturePath }) => {
                             {firstName} {lastName}
                         </Typography>
                         <Typography color={medium}>
-                            {friends.length} friends
+                            {friends ? friends.length : 0} friends
                         </Typography>
                     </Box>
-                    <ManageAccountOutlined />
                 </FlexBetween>
+                <ManageAccountsOutlined />
+            </FlexBetween>
 
                 <Divider />
 
@@ -99,6 +100,8 @@ const UserWidget = ({ userId, picturePath }) => {
                     </Box>
                 </Box>
 
+                <Divider />
+
                     {/* THIRD ROW */}
                     <Box p="1rem 0">
                         <FlexBetween mb="0.5rem">
@@ -114,6 +117,8 @@ const UserWidget = ({ userId, picturePath }) => {
                             </Typography>
                         </FlexBetween>
                     </Box>
+
+                    <Divider />
 
                     {/* FOURTH ROW */}
                     <Box p="1rem">
@@ -151,7 +156,8 @@ const UserWidget = ({ userId, picturePath }) => {
                             <EditOutlined sx={{ color: main }} />
                         </FlexBetween>
                     </Box>
-            </FlexBetween>
         </widgetWrapper>
     )
 };
+
+export default UserWidget;
