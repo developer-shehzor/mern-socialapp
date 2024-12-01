@@ -7,7 +7,7 @@ import {
 import { Box, Typography, Divider, useTheme } from "@mui/material";
 import UserImage from "components/UserImage";
 import FlexBetween from "components/FlexBetween";
-import widgetWrapper from "components/WidgetWrapper";
+import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -51,7 +51,7 @@ const UserWidget = ({ userId, picturePath }) => {
     } = user;
 
     return (
-        <widgetWrapper>
+        <WidgetWrapper>
             {/* FIRST ROW */}
             <FlexBetween 
             gap="0.5rem" 
@@ -156,7 +156,7 @@ const UserWidget = ({ userId, picturePath }) => {
                             <EditOutlined sx={{ color: main }} />
                         </FlexBetween>
                     </Box>
-        </widgetWrapper>
+        </WidgetWrapper>
     )
 };
 

@@ -1,6 +1,6 @@
 import { Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
-import widgetWrapper from "components/WidgetWrapper";
+import WidgetWrapper from "components/WidgetWrapper";
 
 const AdvertWidget = () => {
     const { palette } = useTheme();
@@ -9,7 +9,7 @@ const AdvertWidget = () => {
     const medium = palette.neutral.medium;
 
     return (
-        <widgetWrapper>
+        <WidgetWrapper>
             <FlexBetween>
             <Typography color={dark} variant="h5" fontWeight="500">
                 Sponsored
@@ -37,7 +37,7 @@ const AdvertWidget = () => {
                 Your pathway to stunning and immaculate beauty and made sure your skin 
                 is exfoliating skin and shining like light.
             </Typography>
-        </widgetWrapper>
+        </WidgetWrapper>
     )
 }
 
