@@ -8,12 +8,15 @@ import PostWidget from "./PostWidget";
     const posts = useSelector((state) => state.posts);
     const token = useSelector((state) => state.token);
 
+    // const postArray = Array.isArray(posts) ? posts : [];
+
     const getPosts = async () => {
       const response = await fetch("http://localhost:3001/posts", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}`},
       });
       const data = await response.json();
+      console.log("Fetched posts:", data); // Verify the structure here
       dispatch(setPosts({ posts: data }))
     }
 
@@ -23,6 +26,7 @@ import PostWidget from "./PostWidget";
         headers: { Authorization: `Bearer ${token}`},
       });
       const data = await response.json();
+      console.log("Fetched user posts:", data); // Verify the structure here
       dispatch(setPosts({ posts: data }))
     };
 
@@ -36,7 +40,7 @@ import PostWidget from "./PostWidget";
 
     return (
       <>
-        {posts.map(
+        {(Array.isArray(posts) ? posts : []).map(
           ({
             _id,
             userId,
@@ -47,9 +51,9 @@ import PostWidget from "./PostWidget";
             picturePath,
             userPicturePath,
             likes,
-            comments,   
+            comments,
           }) => (
-            <PostWidget 
+            <PostWidget
               key={_id}
               postId={_id}
               postUserId={userId}
@@ -59,12 +63,12 @@ import PostWidget from "./PostWidget";
               picturePath={picturePath}
               userPicturePath={userPicturePath}
               likes={likes}
-              comments={comments}   
+              comments={comments}
             />
           )
         )}
       </>
-    )
+    );
   };
 
   export default PostsWidget;

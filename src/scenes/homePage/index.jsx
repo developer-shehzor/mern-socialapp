@@ -6,6 +6,7 @@ import MyPostWidget from 'scenes/widgets/MyPostWidget';
 import PostWidget from 'scenes/widgets/PostWidget';
 import AdvertWidget from 'scenes/widgets/AdvertWidget';
 import FriendListWidget from 'scenes/widgets/FriendListWidget';
+import PostsWidget from 'scenes/widgets/PostsWidget';
 
 
 export default function HomePage() {
@@ -29,7 +30,7 @@ export default function HomePage() {
        mt={isNonMobileScreens ? undefined : "2rem"}  
        >
         <MyPostWidget picturePath={picturePath} />
-        <PostWidget userId={_id} />
+        <PostsWidget userId={_id} />
        </Box>
        {isNonMobileScreens && (
         <Box flexBasis="26%">
